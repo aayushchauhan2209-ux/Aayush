@@ -4,10 +4,13 @@ print("Welcome to the Guess the Number Game!")
 while True:
     a = int(input("Enter the range for the number (1 to n): "))
     n = int((randint(1, a)))
+    atumpt = 1
     num = 0
-    while True:
+    while(atumpt <= 5):
        if(num != n):
             num = int(input("Enter your guess: "))
+            print("It is your ", atumpt, "attempt" )
+            atumpt += 1
             if(num >= n+5 ):
                 print("Too high")
             elif(num <= n-5):
@@ -20,6 +23,9 @@ while True:
                 print("Congratulations! You guessed the number.")
                 print("The number was:", n)
                 break
+    else:
+       print("Your Attempts are over! The number was:", n)
+
         
     A = str(input("Do you want to play again? (yes/no): "))
     if A.lower() != "yes":
