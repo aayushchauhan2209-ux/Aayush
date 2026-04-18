@@ -26,37 +26,53 @@ def Deficulty():
     
     
 def Score(attemp):
-   return attemp 
+    if attemp == 1:
+        return 100
+    elif attemp == 2:
+        return 90  
+    elif attemp == 3:
+        return 80
+    elif attemp == 4:
+        return 70
+    elif attemp == 5:
+        return 60
+    elif attemp == 6:
+        return 50
+    elif attemp == 7:
+        return 40
+    elif attemp == 8:
+        return 30
+    elif attemp == 9:
+        return 20
+    elif attemp == 10:
+        return 10
+    else:
+       return 0
+
 
 def Max_Score(score):
-    try:
-        with open("score.txt", "r") as file:
-            data = file.read().strip()
-            n = int(data) if data else 0
-    except FileNotFoundError:
-        n = 0
-    if n is None or score < n:
-        with open("score.txt", "w") as file:
+    with open("C:\\Users\\Ayush\\OneDrive\\Desktop\\Python\\Aayush\\score.txt", "r+") as file:
+        try:    
+            max_score = int(file.read())
+        except:
+            max_score = 0
+        if score > max_score:
+            file.seek(0)
             file.write(str(score))
-        return score
-    else:
-        return n
-
-   
+            return score
+        else:
+            return 
+        
 from random import randint
-Deficulty()
 while True:
     a,matumpt,D = Deficulty()
     n = int((randint(1, a)))
     atumpt = 1
     num = 0
     while(atumpt <= matumpt):
-        num = int(input("Enter your guess: "))
-        print("It is your ", atumpt, "attempt" )
         if(num != n):
-            num = int(input("Enter your guess: "))
             print("It is your ", atumpt, "attempt" )
-            atumpt += 1
+            num = int(input("Enter your guess: "))
             if(num >= n+5 ):
                 print("Too high")
             elif(num <= n-5):
@@ -73,6 +89,7 @@ while True:
                 max_score = Max_Score(score)
                 print("The maximum score is:", max_score)
                 break
+            atumpt += 1
     else:
        print("Your Attempts are over! The number was:", n)
 
