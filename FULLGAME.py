@@ -61,7 +61,7 @@ def Max_Score(score):
             file.write(str(score))
             return score
         else:
-            return 
+            return max_score 
         
 from random import randint
 while True:
@@ -69,6 +69,7 @@ while True:
     n = int((randint(1, a)))
     atumpt = 1
     num = 0
+    print(n)
     while(atumpt <= matumpt):
         if(num != n):
             print("It is your ", atumpt, "attempt" )
