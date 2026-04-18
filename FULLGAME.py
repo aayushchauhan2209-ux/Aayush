@@ -69,7 +69,6 @@ while True:
     n = int((randint(1, a)))
     atumpt = 1
     num = 0
-    print(n)
     while(atumpt <= matumpt):
         if(num != n):
             print("It is your ", atumpt, "attempt" )
