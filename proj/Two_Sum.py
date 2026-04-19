@@ -21,4 +21,4 @@ class Sol:
 
 
 S1 = Sol()
-print(S1.sum([5,5,3,2],5))
+print(S1.sum([5,2,3,7],5))
